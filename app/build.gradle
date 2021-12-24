@@ -10,14 +10,14 @@ android {
         applicationId "com.example.androidstudy"
         minSdk 23
         targetSdk 31
-        versionCode 1
+        versionCode 1 // -> 버전코드가 올라감
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
+        release { // -> 배포할 목적으로 사용
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
