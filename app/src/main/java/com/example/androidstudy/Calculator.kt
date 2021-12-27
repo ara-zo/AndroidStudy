@@ -3,7 +3,6 @@ package com.example.androidstudy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.androidstudy.Kotlin.num
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class Calculator : AppCompatActivity() {
@@ -12,13 +11,12 @@ class Calculator : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_calculator)
 
-		var new = "0"
-		var old = "0"
-		var isFrist = true
+		var new = ""
+		var old = ""
 
 		num1.setOnClickListener {
 			new = when (new) {
-				"0" -> "1"
+				"" -> "1"
 				else -> new + "1"
 			}
 			answer.text = new
@@ -26,7 +24,7 @@ class Calculator : AppCompatActivity() {
 
 		num2.setOnClickListener {
 			new = when (new) {
-				"0" -> "2"
+				"" -> "2"
 				else -> new + "2"
 			}
 			answer.text = new
@@ -34,7 +32,7 @@ class Calculator : AppCompatActivity() {
 
 		num3.setOnClickListener {
 			new = when (new) {
-				"0" -> "3"
+				"" -> "3"
 				else -> new + "3"
 			}
 			answer.text = new
@@ -42,7 +40,7 @@ class Calculator : AppCompatActivity() {
 
 		num4.setOnClickListener {
 			new = when (new) {
-				"0" -> "4"
+				"" -> "4"
 				else -> new + "4"
 			}
 			answer.text = new
@@ -50,7 +48,7 @@ class Calculator : AppCompatActivity() {
 
 		num5.setOnClickListener {
 			new = when (new) {
-				"0" -> "5"
+				"" -> "5"
 				else -> new + "5"
 			}
 			answer.text = new
@@ -58,7 +56,7 @@ class Calculator : AppCompatActivity() {
 
 		num6.setOnClickListener {
 			new = when (new) {
-				"0" -> "6"
+				"" -> "6"
 				else -> new + "6"
 			}
 			answer.text = new
@@ -66,7 +64,7 @@ class Calculator : AppCompatActivity() {
 
 		num7.setOnClickListener {
 			new = when (new) {
-				"0" -> "7"
+				"" -> "7"
 				else -> new + "7"
 			}
 			answer.text = new
@@ -74,7 +72,7 @@ class Calculator : AppCompatActivity() {
 
 		num8.setOnClickListener {
 			new = when (new) {
-				"0" -> "8"
+				"" -> "8"
 				else -> new + "8"
 			}
 			answer.text = new
@@ -82,7 +80,7 @@ class Calculator : AppCompatActivity() {
 
 		num9.setOnClickListener {
 			new = when (new) {
-				"0" -> "9"
+				"" -> "9"
 				else -> new + "9"
 			}
 			answer.text = new
@@ -90,7 +88,7 @@ class Calculator : AppCompatActivity() {
 
 		num0.setOnClickListener {
 			new = when (new) {
-				"0" -> "0"
+				"" -> "0"
 				else -> new + "0"
 			}
 			answer.text = new
@@ -98,45 +96,50 @@ class Calculator : AppCompatActivity() {
 
 		plus.setOnClickListener {
 			old = (old.toInt() + new.toInt()).toString()
-			new = "0"
+			new = ""
 			answer.text = old
 		}
 		minus.setOnClickListener {
 			old = (old.toInt() - new.toInt()).toString()
-			new = "0"
+			new = ""
 			answer.text = old
 		}
 
 		multiply.setOnClickListener {
-			if(isFrist) {
+			if(old == "") {
 				old = "1"
-				isFrist = false
 			}
 
-			old = (old.toInt() * new.toInt()).toString()
-			new = "0"
+			if(new != "") {
+				old = (old.toInt() * new.toInt()).toString()
+			}
+
+			new = ""
 
 			answer.text = old
 		}
 
 		divide.setOnClickListener {
-			if (isFrist) {
+
+			Log.d("TAG", "divide")
+
+			if(old == "") {
 				old = new
-				isFrist = false
-			} else {
-				old = when (new) {
-					"0" -> "0"
-					else -> (old.toInt() / new.toInt()).toString()
-				}
-				new = "0"
+				new = ""
 			}
+
+			if(old != "" && new != "")  {
+				old = (old.toInt() / new.toInt()).toString()
+			}
+
+			new = ""
+
 			answer.text = old
 		}
 
 		ca.setOnClickListener {
-			isFrist = true
-			old = "0"
-			new = "0"
+			old = ""
+			new = ""
 			answer.text = "0"
 		}
 	}
