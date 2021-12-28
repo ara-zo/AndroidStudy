@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <activity
-            android:name=".IntentTest"
+            android:name=".FragmentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,15 +20,18 @@
         </activity>
 
         <activity
+            android:name=".IntentTest"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".Intent2"
             android:exported="false" />
         <activity
             android:name=".Intent1"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Calculator"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Listener"
             android:exported="true" />
