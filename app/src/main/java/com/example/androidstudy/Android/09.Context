@@ -1,0 +1,19 @@
+
+09. Context
+
+Context는 애플리케이션 환경에 대한 글로벌 정보를 갖는 인터페이스이다.
+→ 주변정보
+
+Context는 Android시스템에서 구현체를 제공하는 추상클래스로,
+애플리케이션 별 리소스 및 클래스 접근에 사용되며, 액티비티 실행, 브로드캐스트, 인텐트 수신등과 같은 애플리케이션 수준 작업에 사용된다.
+→ 컨텍스트는 새로 생성된 객체가 지금 어떤 일이 일어나고 있는지 알 수 있도록 한다. 따라서 액티비티와 애플리케이션에 대한 정보를 얻기 위해서는 컨텍스트를 사용하면 된다.
+
+역할
+ActivityManagerService(개발하기 편하도록 미리 구현 해놓은 기능)에 접근 하도록 하는 역할
+안드로이드는 이미 많은 부분들이 만들어져 있다
+→ 이런것들 사용하기 위해서는 Context가 필요한 경우가 많다
+
+종류
+- activity의 context → Activity의 주변정보
+- application의 context → application의 주변정보
+- ApplicationContext > ActivityContext

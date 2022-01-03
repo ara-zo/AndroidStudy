@@ -4,6 +4,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://maven.google.com' }
     }
     dependencies { // -> 의존성, 프로젝트를 만들때 이걸 쓴다
         classpath "com.android.tools.build:gradle:7.0.3"
