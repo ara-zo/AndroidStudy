@@ -10,4 +10,7 @@
 
 
     <color name="textview_color">#E91E63</color>
+    <color name="dark_gray">#686868</color>
+    <color name="gray">#C0C0C0</color>
+
 </resources>

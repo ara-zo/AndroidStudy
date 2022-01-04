@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <activity
-            android:name=".PhonebookActivity"
+            android:name=".PhonebookDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".AddviewActivity"
+            android:name=".PhonebookActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,14 +24,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".AddviewActivity"
+            android:exported="true" />
+        <activity
             android:name=".LibraryActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ThreadActivity"
             android:exported="true" />
