@@ -12,19 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <activity
-            android:name=".PhoneBookWithRecyclerViewActivity"
-            android:exported="true" >
+            android:name=".SharedPreferenceActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".TabPager2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".TabPagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PhoneBookWithRecyclerViewActivity"
+            android:exported="true" />
         <activity
             android:name=".RecyclerViewActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ListViewActivity"
             android:exported="true" />
