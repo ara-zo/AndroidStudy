@@ -3,6 +3,7 @@
     package="com.example.androidstudy">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
+
         <activity
-            android:name=".SharedPreferenceActivity"
+            android:name=".RetrofitActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".NetworkActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AsyncActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RealmActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SharedPreferenceActivity"
+            android:exported="true" />
         <activity
             android:name=".TabPager2Activity"
             android:exported="true" />

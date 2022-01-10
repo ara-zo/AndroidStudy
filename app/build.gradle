@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions' // 익스텐션 플러그인 적용
+
+    id 'kotlin-kapt'
+    id 'realm-android'
 }
 
 android {
@@ -13,6 +16,8 @@ android {
         targetSdk 31
         versionCode 1 // -> 버전코드가 올라감
         versionName "1.0"
+
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -52,4 +57,12 @@ dependencies {
     }
 
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // 레트로핏
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }
