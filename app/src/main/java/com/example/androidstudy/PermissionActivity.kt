@@ -6,28 +6,31 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_permission.*
 
 class PermissionActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_permission)
 
-		val cameraPermissionCheck = ContextCompat.checkSelfPermission(
-													this@PermissionActivity,
-													android.Manifest.permission.CAMERA,
-												)
-		
-		if(cameraPermissionCheck != PackageManager.PERMISSION_GRANTED) {
-			// 권한이 없는 경우
-			ActivityCompat.requestPermissions(
+		ask.setOnClickListener {
+			val cameraPermissionCheck = ContextCompat.checkSelfPermission(
 				this@PermissionActivity,
-				arrayOf(android.Manifest.permission.CAMERA),
-				1000
+				android.Manifest.permission.CAMERA,
 			)
-		} else {
-			// 권한이 있는 경우
-			Log.d("permissionssss", "권한이 이미 있음")
 
+			if(cameraPermissionCheck != PackageManager.PERMISSION_GRANTED) {
+				// 권한이 없는 경우
+				ActivityCompat.requestPermissions(
+					this@PermissionActivity,
+					arrayOf(android.Manifest.permission.CAMERA),
+					1000
+				)
+			} else {
+				// 권한이 있는 경우
+				Log.d("permissionssss", "권한이 이미 있음")
+
+			}
 		}
 	}
 
@@ -37,9 +40,14 @@ class PermissionActivity : AppCompatActivity() {
 		grantResults: IntArray,
 	) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
 		if(requestCode == 1000) {
-
+			if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				// 승낙
+				Log.d("permissionssss", "승낙")
+			} else {
+				// 거부
+				Log.d("permissionssss", "거부")
+			}
 		}
 	}
 }
