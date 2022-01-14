@@ -21,7 +21,7 @@ class AsyncActivity : AppCompatActivity() {
 			task?.execute()
 		}
 		stop.setOnClickListener {
-//			task?.cancel(true)
+			task?.cancel(true)
 			startActivity(Intent(this@AsyncActivity, Intent2::class.java))
 		}
 	}
@@ -32,6 +32,8 @@ class AsyncActivity : AppCompatActivity() {
 	}
 }
 
+
+// TODO 수정필요
 class BackgroundAsyncTask(
 	val progressbar: ProgressBar,
 	val progressText: TextView,

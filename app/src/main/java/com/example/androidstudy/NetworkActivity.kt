@@ -17,6 +17,7 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
+// TODO 수정필요
 class NetworkActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class NetworkActivity : AppCompatActivity() {
 	}
 }
 
+// TODO 수정필요
 class NetworkTask(
 	val recyclerView: RecyclerView,
 	val inflater: LayoutInflater,

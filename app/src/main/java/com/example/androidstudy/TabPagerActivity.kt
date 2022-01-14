@@ -40,6 +40,7 @@ class TabPagerActivity : AppCompatActivity() {
 	}
 }
 
+// TODO 수정필요
 // FragmentStatePagerAdapter가 depated 되어 수정 필요함
 class FragmentPagerAdapter(
 	fragmentManager: FragmentManager,

@@ -43,6 +43,7 @@ class ThreadActivity : AppCompatActivity() {
 
 			// ui쓰레드(main쓰레드)에서 변경
 			runOnUiThread {
+				// TODO 수정필요
 				button.setBackgroundColor(getColor(R.color.textview_color))
 			}
 		}).start()

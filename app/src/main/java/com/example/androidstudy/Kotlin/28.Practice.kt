@@ -24,14 +24,12 @@ interface Person__{
 
 class Student__ : Person__ {
 	override fun study() {
-		TODO("Not yet implemented")
 	}
 
 }
 
 class Teacher__ : Person__ {
 	override fun study() {
-		TODO("Not yet implemented")
 	}
 
 }
